@@ -11,7 +11,7 @@ export class CustomerComponent {
   
   LogObj : BaseLogger = null;
   constructor(_inject : Injector){
-    this.LogObj = _inject.get(1);
+    this.LogObj = _inject.get('1');
     this.LogObj.Log();
 
   }
