@@ -15,13 +15,18 @@ export class CustomerComponent {
     this.LogObj.Log();
 
   }
-
-
-  CustomerModel : Customer = new Customer();
+   CustomerModel : Customer = new Customer();
   CustomerModels : Array<Customer> = new Array<Customer>();
 
   Add(){
     this.CustomerModels.push(this.CustomerModel);
     this.CustomerModel = new Customer();
+  }
+
+  hasError(controlname : string, typeOfValidator : string) : boolean{
+    return this.CustomerModel.formCustomerGroup
+                              .controls[controlname]
+                              .hasError(typeOfValidator);
+
   }
 }
