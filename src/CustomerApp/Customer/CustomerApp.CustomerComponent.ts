@@ -15,7 +15,12 @@ export class CustomerComponent {
     this.LogObj.Log();
 
   }
-   CustomerModel : Customer = new Customer();
+
+  SelectCustomer(_select : Customer){
+    this.CustomerModel = _select;
+  }
+  
+  CustomerModel : Customer = new Customer();
   CustomerModels : Array<Customer> = new Array<Customer>();
 
   Add(){
@@ -29,4 +34,5 @@ export class CustomerComponent {
                               .hasError(typeOfValidator);
 
   }
+
 }

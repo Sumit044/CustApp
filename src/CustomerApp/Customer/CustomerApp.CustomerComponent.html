@@ -11,17 +11,9 @@
 <div *ngIf = "CustomerModel.formCustomerGroup.dirty"  [hidden] = "(!(hasError('CustomerNameControl', 'required')))"> Customer Name is required</div>
 <div *ngIf = "CustomerModel.formCustomerGroup.dirty"  [hidden] = "(!(hasError('CustomerCodeControl', 'pattern')))">Invalid Customer Code</div>
 
-<table>
-  <tr>
-    <th>Customer Code</th>
-    <th>Customer Name</th>
-    <th>Customer Amount</th>
-  </tr>
-  <tr *ngFor = "let cust of CustomerModels">
-    <td>{{cust.CustomerCode}}</td>
-    <td>{{cust.CustomerName}}</td>
-    <td>{{cust.CustomerAmount}}</td>
-  </tr>
-</table>
+<my-grid 
+  [grid-data]="CustomerModels" 
+  [grid-columns] = "[{'colName': 'CustomerCode'}, {'colName': 'CustomerName'}, {'colName': 'CustomerAmount'}]"
+  (grid-selected) = "SelectCustomer($event)"></my-grid>
 
 
