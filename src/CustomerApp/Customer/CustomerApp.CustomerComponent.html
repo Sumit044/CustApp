@@ -4,6 +4,7 @@
   Customer Name :<input type = "text" [(ngModel)] = "CustomerModel.CustomerName" formControlName = "CustomerNameControl"><br>
   Customer Amount :<input type = "text" [(ngModel)] = "CustomerModel.CustomerAmount" [ngModelOptions]="{standalone: true}"><br>
   <input type="button" value="Add" (click) = "Add()" [disabled] = "!(CustomerModel.formCustomerGroup.valid)" >
+  <input type="button" value="Add to Server" (click) = "postToServer()">
 </form>
 <br>
 <div *ngIf = "CustomerModel.formCustomerGroup.dirty" 
